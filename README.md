@@ -13,7 +13,7 @@ This tool automates data extraction for floc characterization in flume tank expe
 
 <p align="center">
   <img src="https://github.com/braydennoh/FlocTrack/blob/main/gif/floc1.gif" width="400" height="250" style="margin: 5px;">
-  <img src="https://github.com/braydennoh/FlocTrack/blob/main/gif/floc3.gif" width="400" height="250" style="margin: 5px;">
+  <img src="https://github.com/braydennoh/FlocTrack/blob/main/gif/floc2.gif" width="400" height="250" style="margin: 5px;">
 </p>
 <p align="center">
   <img src="https://github.com/braydennoh/FlocTrack/blob/main/gif/floc4.gif" width="400" height="250" style="margin: 5px;">
