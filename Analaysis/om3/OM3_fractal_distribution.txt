@@ -1,0 +1,41 @@
+Fractal Dimension Distribution Report — OM3
+============================================================
+
+Source: experimentaldata/OM3.csv
+Total particles (after cleaning): 1446
+
+PER-BIN STRATIFIED RESULTS
+------------------------------------------------------------
+         Bin      N    slope   nf3D med  95% CI lo  95% CI hi
+[1.0,1.1)     16    0.224      1.224      1.009      1.919
+[1.1,1.2)     67    0.372      1.372      1.053      1.761
+[1.2,1.3)    167    0.644      1.644      1.433      1.886
+[1.3,1.4)    407    0.519      1.519      1.394      1.642
+[1.4,1.5)    456    0.756      1.756      1.641      1.872
+[1.5,1.6)    278    0.634      1.634      1.503      1.787
+[1.6,1.7)     53    0.424      1.424      1.157      1.698  [EXCLUDED]
+[1.7,1.8)      2        —          —          —          —
+[1.8,1.9)      0        —          —          —          —
+[1.9,2.0)      0        —          —          —          —
+
+Empirical 2D→3D:  nf3D = 0.879 * nf2D +0.383   R² = 0.6993
+
+GLOBAL FIT
+------------------------------------------------------------
+  slope      = 0.747
+  nf3D       = 1.747  [95% CI: 1.593 – 1.898]
+
+DISTRIBUTION COMPARISON: GLOBAL vs STRATIFIED
+------------------------------------------------------------
+                            Global  Stratified
+  Mean                       1.747       1.630
+  Median                     1.747       1.638
+  Std Dev                    0.077       0.150
+  5th percentile             1.620       1.411
+  25th percentile            1.694       1.534
+  75th percentile            1.800       1.737
+  95th percentile            1.872       1.825
+
+  KS statistic = 0.4276
+  KS p-value   = 7.9359e-209
+  Bias (E[strat] − global) = -0.1170

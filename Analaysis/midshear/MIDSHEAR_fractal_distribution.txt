@@ -1,0 +1,41 @@
+Fractal Dimension Distribution Report — MIDSHEAR
+============================================================
+
+Source: experimentaldata/MIDSHEAR.csv
+Total particles (after cleaning): 2200
+
+PER-BIN STRATIFIED RESULTS
+------------------------------------------------------------
+         Bin      N    slope   nf3D med  95% CI lo  95% CI hi
+[1.0,1.1)      3    1.179      2.179      1.111      3.609  [EXCLUDED]
+[1.1,1.2)      8    0.494      1.494      1.021      2.986
+[1.2,1.3)     53    0.675      1.675      1.220      2.125
+[1.3,1.4)    190    0.789      1.789      1.578      2.004
+[1.4,1.5)    672    0.984      1.984      1.874      2.093
+[1.5,1.6)    858    0.949      1.949      1.877      2.022
+[1.6,1.7)    365    0.941      1.941      1.845      2.037
+[1.7,1.8)     50    1.246      2.246      1.957      2.534
+[1.8,1.9)      1        —          —          —          —
+[1.9,2.0)      0        —          —          —          —
+
+Empirical 2D→3D:  nf3D = 1.052 * nf2D +0.343   R² = 0.8824
+
+GLOBAL FIT
+------------------------------------------------------------
+  slope      = 0.941
+  nf3D       = 1.941  [95% CI: 1.800 – 2.086]
+
+DISTRIBUTION COMPARISON: GLOBAL vs STRATIFIED
+------------------------------------------------------------
+                            Global  Stratified
+  Mean                       1.942       1.944
+  Median                     1.941       1.952
+  Std Dev                    0.073       0.102
+  5th percentile             1.821       1.762
+  25th percentile            1.894       1.915
+  75th percentile            1.991       1.990
+  95th percentile            2.063       2.053
+
+  KS statistic = 0.1146
+  KS p-value   = 6.9741e-22
+  Bias (E[strat] − global) = +0.0024

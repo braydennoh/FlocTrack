@@ -1,0 +1,44 @@
+First-Principles Floc Density Analysis
+======================================================================
+
+METHODOLOGY
+----------------------------------------------------------------------
+Path 1 (Stokes): Δρ = 18μw_s / (gD_f²)
+  Assumptions: Stokes drag (Re << 1)
+  Uses: w_s (measured), D_f (measured)
+
+Path 2 (Fractal): φ = (D_f / D_p)^{n_f - 3}
+  Assumptions: Self-similar fractal packing
+  Uses: D_f (measured), D_p (from intersections), n_f^3D (from MCMC)
+
+Path 3 (Cross-check): ρ_s,eff = ρ_w + Δρ / φ
+  Assumptions: None beyond Paths 1 + 2
+  Expected: ≈ 2650 kg/m³ (kaolinite) if consistent
+
+RESULTS
+----------------------------------------------------------------------
+Dataset          N     D_p   Δρ med    φ med   ρ_s,eff    ρ_floc
+                      (µm)  (kg/m³)            (kg/m³)   (kg/m³)
+LOWSHEAR      2399    21.7      248   0.4150      1648      1248
+MIDSHEAR      1864    23.0      767   0.7675      2052      1767
+HIGHSHEAR     1526    29.8      592   0.8376      1740      1592
+OM1            845    34.2      735   0.7361      2017      1735
+OM2            879    27.9      597   0.5228      2133      1597
+OM3           1412    17.6      603   0.3404      2800      1603
+
+
+KEY FINDINGS
+----------------------------------------------------------------------
+
+Shear sweep (u* = 0.02 → 0.04 m/s):
+  Δρ: 248 → 592 kg/m³
+  φ:  0.4150 → 0.8376
+
+OM sweep (1% → 3%):
+  Δρ: 735 → 603 kg/m³
+  φ:  0.7361 → 0.3404
+
+Consistency check (ρ_s,eff across all datasets):
+  Overall median = 1946 kg/m³
+  IQR = [1678, 2330]
+  Expected (kaolinite) = 2650 kg/m³

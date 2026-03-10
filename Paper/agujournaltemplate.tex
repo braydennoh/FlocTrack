@@ -1,0 +1,708 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGUJournalTemplate.tex: this template file is for articles formatted with LaTeX
+%
+% This file includes commands and instructions
+% given in the order necessary to produce a final output that will
+% satisfy AGU requirements, including customized APA reference formatting.
+%
+% You may copy this file and give it your
+% article name, and enter your text.
+%
+% guidelines and troubleshooting are here: 
+
+%% To submit your paper:
+\documentclass{agujournal2019}
+
+\usepackage{url} %this package should fix any errors with URLs in refs.
+\usepackage{lineno}
+\usepackage[inline]{trackchanges} %for better track changes. finalnew option will compile document with changes incorporated.
+\usepackage{soul}
+\usepackage{amsmath}
+
+
+\linenumbers
+%%%%%%%
+% As of 2018 we recommend use of the TrackChanges package to mark revisions.
+% The trackchanges package adds five new LaTeX commands:
+%
+%  \note[editor]{The note}
+%  \annote[editor]{Text to annotate}{The note}
+%  \add[editor]{Text to add}
+%  \remove[editor]{Text to remove}
+%  \change[editor]{Text to remove}{Text to add}
+%
+% complete documentation is here: http://trackchanges.sourceforge.net/
+%%%%%%%
+
+\draftfalse
+
+%% Enter journal name below.
+%% Choose from this list of Journals:
+%
+% JGR: Atmospheres
+% JGR: Biogeosciences
+% JGR: Earth Surface
+% JGR: Oceans
+% JGR: Planets
+% JGR: Solid Earth
+% JGR: Space Physics
+% Global Biogeochemical Cycles
+% Geophysical Research Letters
+% Paleoceanography and Paleoclimatology
+% Radio Science
+% Reviews of Geophysics
+% Tectonics
+% Space Weather
+% Water Resources Research
+% Geochemistry, Geophysics, Geosystems
+% Journal of Advances in Modeling Earth Systems (JAMES)
+% Earth's Future
+% Earth and Space Science
+% Geohealth
+%
+% ie, \journalname{Water Resources Research}
+
+\journalname{JGR: Earth Surface, Confidential manuscript under review}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  TITLE
+%
+% (A title should be specific, informative, and brief. Use
+% abbreviations only if they are defined in the abstract. Titles that
+% start with general keywords then specific terms are optimized in
+% searches)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Example: \title{This is a test title}
+
+\title{Constraining the Distribution of 3D Fractal Structures in Mud Flocs}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  AUTHORS AND AFFILIATIONS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Authors are individuals who have significantly contributed to the
+% research and preparation of the article. Group authors are allowed, if
+% each author in the group is separately identified in an appendix.)
+
+% List authors by first name or initial followed by last name and
+% separated by commas. Use \affil{} to number affiliations, and
+% \thanks{} for author notes.
+% Additional author notes should be indicated with \thanks{} (for
+% example, for current addresses).
+
+% Example: \authors{A. B. Author\affil{1}\thanks{Current address, Antartica}, B. C. Author\affil{2,3}, and D. E.
+% Author\affil{3,4}\thanks{Also funded by Monsanto.}}
+
+\authors{
+Brayden Noh\affil{1,2},
+Justin A.~Nghiem\affil{1},
+Kimberly Litwin Miller\affil{1},
+Dongchen Wang\affil{1},
+Michael P.~Lamb\affil{1}
+}
+
+\affiliation{1}{Division of Geological and Planetary Sciences, California Institute of Technology, Pasadena, CA 91125, USA}
+\affiliation{2}{Department of Earth and Planetary Sciences, Harvard University, Cambridge, MA 02138, USA}
+
+% Corresponding author mailing address and e-mail address:
+
+% (include name and email addresses of the corresponding author.  More
+% than one corresponding author is allowed in this LaTeX file and for
+% publication; but only one corresponding author is allowed in our
+% editorial system.)
+
+% Example: \correspondingauthor{First and Last Name}{email@address.edu}
+
+\correspondingauthor{Brayden Noh}{braydennoh@fas.harvard.edu}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% KEY POINTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  List up to three key points (at least one is required)
+%  Key Points summarize the main points and conclusions of the article
+%  Each must be 140 characters or fewer with no special characters or punctuation and must be complete sentences
+
+% Example:
+% \begin{keypoints}
+% \item	List up to three key points (at least one is required)
+% \item	Key Points summarize the main points and conclusions of the article
+% \item	Each must be 140 characters or fewer with no special characters or punctuation and must be complete sentences
+% \end{keypoints}
+
+\begin{keypoints}
+\item Aggregating floc data overestimates 3D fractal dimension due to structural diversity.
+\item Stratifying by 2D fractal dimension reveals true trends with shear and organic matter.
+\item Structure-resolved analysis improves sediment transport modeling and prediction.
+\end{keypoints}
+
+
+\begin{abstract}
+Mud builds coastal landscapes and hosts pollutants and particulate carbon, yet predicting its transport is difficult because mud aggregates into flocs with complex fractal structures that control settling rates. Floc structure is typically characterized using fractal theory with a constant fractal dimension ($n_f = 2.0$--$2.2$), despite natural variability. We conducted experiments on freshwater riverine flocs under varied shear stress and organic matter concentration to characterize this diversity. The fractal dimension $n_f$ was calculated from coupled measurements of floc size and settling rate using particle image tracking. Rather than aggregating all settling data to infer a single value, we grouped measurements by the two-dimensional fractal dimension derived from box counting, thereby resolving structural variability. This stratified method reveals systematic changes in $n_f$ with shear velocity and organic matter that are obscured when data are aggregated. Across all conditions, aggregation overestimates $n_f$ by 0.1--0.2. The 2D--3D relationship is best described by a nonlinear model, consistent with empirical conversions for natural aggregates. Although conventional analyses yield values ($n_f = 2.0$--$2.2$) similar to the canonical range, we show these results are biased due to correlations between settling velocity, floc size, and fractal dimension, analogous to Simpson’s Paradox. Our approach reduces this bias, yields lower $n_f$, and implies mud flocs are more porous, settle more slowly, and travel farther than existing models predict. This suggests coastal and estuarine mud retention is substantially less efficient than current floc models assume, with implications for sediment budgets, contaminant dispersal, and the geomorphic evolution of muddy coastlines.
+\end{abstract}
+
+\section*{Plain Language Summary}
+Mud particles in rivers and coastal waters tend to clump together into clusters called flocs. How quickly these flocs sink determines where mud is deposited, shaping the growth of river deltas, floodplains, and coastlines. Predicting this settling is challenging because flocs vary widely in structure: some are dense and compact, while others are porous and loosely bound. Most studies assume that all flocs have a single, uniform structure, which oversimplifies their behavior. In our experiments, we generated flocs in freshwater under controlled conditions with different flow strengths and amounts of organic matter. Using high-resolution imaging, we measured both their structure and settling speed. We found that faster flows tend to produce more compact flocs that settle more quickly, while organic matter encourages the formation of more open structures that settle more slowly. By grouping flocs according to their measured structural complexity, we revealed trends that are hidden when data are averaged together. This new approach reduces bias in estimating settling rates and improves predictions of how mud moves through rivers and coastal environments.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  BODY TEXT
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Suggested section heads:
+% \section{Introduction}
+%
+% The main text should start with an introduction. Except for short
+% manuscripts (such as comments and replies), the text should be divided
+% into sections, each with its own heading.
+
+% Headings should be sentence fragments and do not begin with a
+% lowercase letter or number. Examples of good headings are:
+
+% \section{Materials and Methods}
+% Here is text on Materials and Methods.
+%
+% \subsection{A descriptive heading about methods}
+% More about Methods.
+%
+% \section{Data} (Or section title might be a descriptive heading about data)
+%
+% \section{Results} (Or section title might be a descriptive heading about the
+% results)
+%
+% \section{Conclusions}
+
+
+\section{Introduction}
+
+Fine-grained sediment, or mud, defined by particles smaller than 62.5 microns, dominates fluvial sediment loads and represents the dominant material deposited in lowland and deltaic environments \cite{healy2002muddy, kranenburg1994fractal, lamb2020mud}. The dynamics of mud transport and deposition therefore exert first-order control on the long-term evolution of deltas, floodplains, and estuaries \cite{nghiem2022mechanistic, winterwerp2002flocculation}, as well as on water quality, contaminant fluxes, and the success of restoration interventions \cite{droppo1997freshwater, esposito2017efficient, kemp2016enhancing, liss1996floc}. Mud also plays a central role in the global carbon cycle by providing reactive mineral surfaces for organic carbon adsorption and long-term preservation \cite{bianchi2024anthropogenic, blair2012fate}.
+
+The geomorphic and geochemical importance of mud necessitates a mechanistic framework for how individual particles move and settle to enable predictive modeling. Predictive approaches for standard sediment transport begin with Stokes' law, which describes the terminal settling velocity ($w_s$) of smooth, impermeable spheres at low Reynolds numbers \cite{bird2006transport, stokes1851effect}:
+\begin{equation}
+w_s = \frac{g\,(\rho_p - \rho_f)\,d^2}{18\,\rho_f\,\nu}
+    \label{eq:stokes}
+\end{equation}
+where $g = 9.81\ \mathrm{m\,s^{-2}}$ is gravitational acceleration, $\rho_p\ (\mathrm{kg\,m^{-3}})$ and $\rho_f\ (\mathrm{kg\,m^{-3}})$ are the densities of the particle and fluid, $d\ (\mathrm{m})$ is particle diameter, and $\nu\ (\mathrm{m^2\,s^{-1}})$ is the kinematic viscosity of the fluid. 
+
+However, when applied to fine-grained sediment, Stokes' law yields predictions at odds with field observations. Consider a single $1\,\mu\mathrm{m}$ mud particle in a $5$\,m-deep river flowing at $1\,\mathrm{m\,s}^{-1}$. Using Stokes’ law produces a settling velocity of just $9\times 10^{-8}\,\mathrm{m\,s}^{-1}$, implying a deposition time greater than 600 days and a transport distance exceeding 55,000\,km downstream. This hypothetical scenario conflicts sharply with field observations of mud deposition \cite{lamb2020mud}. Field studies document that lowland rivers commonly build levees through overbank flows, with many levees composed primarily of mud and clay contents of approximately $50\%$ \cite{aalto2008spatial}. Furthermore, deposition rates along alluvial ridges typically decrease exponentially with distance from the channel, indicating transport lengths on the order of tens to hundreds of meters rather than tens of kilometers \cite{hajek2012simplified}.
+
+This discrepancy indicates mud settles far more rapidly than predicted for isolated particles, indicating the presence of additional physical processes. The deviation arises because suspended mud particles rapidly flocculate, forming larger aggregates that settle much faster than their individual constituents \cite{droppo1997freshwater, johnson1996settling, kranenburg1994fractal}. These flocculated aggregates, or flocs, are highly porous rather than dense, impermeable spheres, so their effective density decreases with increasing size \cite{kranenburg1994fractal, Meakin1992Aggregation}. Because flocs exhibit approximately self-similar (fractal) organization \cite{family2012kinetics, jullien1987aggregation}, their hierarchical structure can be described by a standard fractal mass–size scaling \cite{Meakin1992Aggregation}:
+\begin{equation}
+N \sim \left( \frac{d_f}{d_p} \right)^{n_f},
+    \label{eq:fractaltheory}
+\end{equation}
+where $N$ is the number of primary particles (dimensionless), $d_f$ is the floc diameter (m), $d_p$ is the primary particle diameter (m), and $n_f$ is the fractal dimension (dimensionless).
+
+Building on Eq.~\eqref{eq:fractaltheory}, the fraction of the floc volume actually occupied by solid grains is the ratio of solid volume to the enclosing floc volume. Because the solid volume scales with $N$ times the monomer volume while the enclosure scales with $d_f^{3}$, $\phi_s$ decreases with size approximately as $(d_f/d_p)^{\,n_f-3}$. For a porous aggregate whose pores are filled by ambient water, the floc’s submerged specific gravity equals this solid fraction times the solid’s submerged specific gravity. Denoting submerged specific gravity by $R=(\rho-\rho_w)/\rho_w$, this yields
+\begin{equation}
+R_f = R_s \left( \frac{d_f}{d_p} \right)^{n_f - 3},
+    \label{eq:eq3}
+\end{equation}
+where $R_f$ and $R_s$ are the submerged specific gravity of the floc and primary particles, respectively (both dimensionless), $\rho$ is particle density (kg\,m$^{-3}$), and $\rho_w$ is water density (kg\,m$^{-3}$). Since a dense solid sphere has volume that scales with the cube of its diameter, its fractal dimension is $n_f=3$, and Eq.~\eqref{eq:eq3} reduces to $R_f=R_s$; naturally formed flocs are more porous with $n_f<3$, yielding $R_f<R_s$.
+
+Substituting Eq.~\eqref{eq:eq3} into Eq.~\eqref{eq:stokes} gives an explicit expression for the settling velocity of a fractal floc \cite{strom2011explicit, winterwerp1998simple}:
+\begin{equation}
+    w_s = \frac{g\,R_s}{b_1\,\nu\,d_p^{\,n_f - 3}}\; d_f^{\,n_f - 1},
+    \label{eq:floc_settling}
+\end{equation}
+where $w_s$ is the settling velocity (m\,s$^{-1}$), $g$ is gravitational acceleration (m\,s$^{-2}$), $\nu$ is kinematic viscosity (m$^{2}$\,s$^{-1}$), and $b_1$ is a dimensionless shape/drag factor (with $b_1=18$ for smooth spheres).
+
+In practice, applying Eq.~\eqref{eq:floc_settling} requires an appropriate fractal dimension $n_f$, which captures how floc structure modifies settling velocity. Experimental and field studies frequently assume $n_f \approx 2.0$–$2.2$, based on empirical relationships between $w_s$ and $d_f$. When fluid properties and $d_p$ are held fixed, Eq.~\eqref{eq:floc_settling} implies a power-law dependence $w_s \propto d_f^{\,n_f-1}$ \cite{johnson1996settling, li1989fractal}. The usual procedure is to measure $w_s$ and $d_f$ for many flocs and fit a log–log slope of $n_f-1$ to infer $n_f$, a method widely applied in laboratory settling columns and in situ video analyses \cite{kranenburg1994fractal, strom2011explicit, winterwerp1998simple, winterwerp2002flocculation, winterwerp2004introduction, winterwerp2006heuristic}.
+
+Using a single, population-wide fractal dimension $n_f$ is convenient but restrictive. \citeA{khelifa2006models} showed that treating $n_f$ as constant fails to reproduce the observed spread in settling velocities because $n_f$ commonly decreases with increasing floc size. In most experimental and image-based field studies, only floc size $d_f$ and settling velocity $w_s$ are recorded \cite{smith2015image}; the standard log–log regression of $w_s$ on $d_f$ therefore conflates two effects: (i) genuine between-floc variability in structure arising from differing formation conditions, and (ii) a size dependence of $n_f$ within a population. Without independent structural metrics for each floc, these confounders are indistinguishable, and a single representative $n_f$ obscures both sources of variability.
+
+To illustrate this effect, consider a population comprising three subgroups, each defined by a distinct fractal dimension ($n_f = 1.5$, $2.0$, and $2.5$) but formed from primary particles of the same diameter ($d_p = 10^{-5}$~m). According to Eq.~\eqref{eq:floc_settling}, the slope of the log--log relationship between settling velocity and floc diameter for each subgroup is $n_f - 1$. When analyzed separately, these subgroups yield distinct log--log slopes corresponding to $n_f = 1.5$, $2.0$, and $2.5$, respectively (Fig.~\ref{fig:1}). However, if these floc subgroups are combined into a single group and floc diameter ($d_f$) is correlated with the 3D fractal dimension ($n_f$), then fitting a single power-law relationship to all points can yield a substantially skewed and misleading exponent. In Fig.~\ref{fig:1}, the resulting log--log slope is $2$, implying an effective $n_f = 3$, which corresponds to the settling behavior of smooth, impermeable spheres, not flocs. This example parallels Simpson's Paradox \cite{simpson1951interpretation}, a statistical phenomenon in which relationships observed within individual subgroups are reversed, masked, or distorted upon aggregation. In the context of floc settling, pooling data from structurally diverse populations might produce misleading global trends that fail to represent the true behavior of any constituent subgroup.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/1.pdf}
+    \caption{
+    Synthetic data illustrating Simpson's Paradox in floc settling. Three floc subgroups, each with a specific 3D fractal dimension ($n_f = 1.5,\ 2.0,\ \text{and}\ 2.5$), are shown. By fractal theory, the slope of the log-log relationship between settling velocity ($w_s$) and floc diameter ($d_f$) is $n_f - 1$. Fitting each subgroup individually recovers slopes of 0.5, 1.0, and 1.5, as expected. In contrast, aggregating all data produces a single power-law fit (red line) with a misleading slope of 2, equivalent to $n_f = 3$, characteristic of solid spheres and not flocs. All trend lines intersect at the primary particle diameter ($d_f = d_p = 10^{-5}\,\mathrm{m}$), where settling velocity is independent of fractal dimension.
+    }
+    \label{fig:1}
+\end{figure}
+
+To estimate fractal dimension independently of settling velocity and floc diameter, studies have employed image-based techniques that analyze in situ 2D projections of flocs \cite{jarvis2005measuring}. These approaches typically calculate a two-dimensional (2D) fractal dimension from high-resolution images, then infer the corresponding three-dimensional (3D) structure via empirical or simulation-based relationships. A common method relates the perimeter--area scaling of projected flocs to a 2D fractal dimension, using computationally generated aggregates to derive a mapping between 2D and 3D fractal dimensions \cite{lee2004prediction, maggi2004method, tang2015reconstructing}. However, the relationship between 2D and 3D fractal dimensions is derived from synthetic aggregates, which may not replicate the aggregation dynamics or structural variability of natural flocs. Projection-based estimates therefore risk systematic bias and, more importantly, do not recover the 3D fractal dimension that directly controls settling behavior.
+
+Although flocculation has been widely characterized, how within-population structural heterogeneity shapes settling remains uncertain, particularly under natural particle-size distributions and aggregation pathways. The central difficulty is mapping image-derived structural descriptors onto parameters used in sediment-transport models without introducing aggregation (Simpson-type) bias. To address this, we stratify the floc population by two-dimensional (2D) box-counting fractal dimension and, within each stratum, regress settling velocity $w_s$ against floc diameter $d_f$ to estimate the hydrodynamically relevant three-dimensional (3D) fractal dimension $n_f$. This stratified design preserves within-population variability, mitigates aggregation bias, and yields more reliable parameter estimates for modeling floc transport.
+
+We evaluate this framework in controlled laboratory experiments with systematic variation in shear velocity stress and organic matter concentration. High-resolution in situ imaging enables quantification of floc morphology and settling trajectories. Specifically, we pursue three objectives: (1) demonstrate the existence of structurally distinct subgroups within the floc population, each characterized by a unique fractal dimension; (2) relate 2D image–derived fractal dimensions to settling-inferred 3D dimensions, and assess this relationship against theoretical predictions; and (3) estimate the effective primary particle size ($d_p$) and quantify how the hydrodynamic shape factor ($b_1$) varies as a function of $n_f$. 
+
+\section{Methodology}
+
+\subsection{Experimental Setup}
+
+We performed flocculation experiments in a custom mixing tank designed to provide controlled laboratory conditions (Fig.~\ref{fig:2}a). The tank comprises a cylindrical PVC pipe, 20~cm in diameter and 60~cm tall, filled with water to a depth of 40~cm. A motor-driven paddle, mounted above the open top and submerged just below the free surface, sets the desired shear. Shear velocity, $u_\ast$, was empirically calibrated for each run by converting motor revolutions per minute to $u_\ast$ using a relationship derived from previous sediment-entrainment trials in \citeA{douglas2025mud}.
+
+Suspended flocs were imaged through a 3~mm-thick flow-through slit built into the tank wall at the observation level. A DSLR fitted with a $5\times$ microscope objective was aligned with the slit to record flocs as they crossed the narrow optical path, enhancing image clarity and increasing the number of focused particles captured by the camera, following methods similar to \citeA{osborn2021flocarazi}.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/2.pdf}
+    \caption{
+    (a) Schematic of the custom flocculation apparatus. A cylindrical PVC tank (20~cm diameter, 60~cm height) is filled to 40~cm depth and stirred with a motor-driven paddle just below the surface. Shear velocity is calibrated for each run. An observation slit (3~mm wide) enables in situ imaging of suspended flocs with a DSLR camera and 5$\times$ microscope objective aligned for high-resolution focus. Key components and dimensions are annotated.
+    (b) Grain-size distributions for experimental solids measured by Camsizer and Mastersizer. Curves show pure silica sand (SiO$_2$), montmorillonite clay, and mixed flocs. Cumulative percent finer by mass is plotted against diameter, highlighting the wide initial sediment size range and composite nature of the floc population. The feed spans $\sim$0.1--100~$\mu$m, with mixed floc distributions given as a 50:50 mass-weighted average of the end-member minerals.
+    }
+    \label{fig:2}
+\end{figure}
+
+\subsection{Experimental Runs}
+
+We conducted eight experimental runs in total. The first two were calibration runs using laboratory spheres and silica grains, which do not flocculate, to verify the accuracy of our settling-velocity measurements and provide a baseline for comparing non-flocculating particles to flocs under identical experimental conditions. The remaining six runs systematically varied shear velocity and organic matter (OM) content, given that previous studies have shown turbulent shear limits floc size by promoting breakup, while organic matter enhances aggregation by binding particles \cite{nghiem2022mechanistic}. By independently controlling these variables, we aimed to isolate their respective roles in floc formation and settling.
+
+Each floc experiment used 10~g of solids: 5~g silica (SiO$_2$) and 5~g montmorillonite clay. Organic content was varied in three runs by adding guar gum, a plant-derived polysaccharide that mimics natural organic matter in rivers, at 1, 2, or 3~wt\% relative to the total mass of solids, following methods in \citeA{zeichner2021early}. Full experimental conditions, including organic-matter fraction and imposed $u_\ast$, are listed in Table~\ref{tab:exp_conditions}.
+
+\begin{table}[htbp]
+\caption{Summary of experimental conditions.\label{tab:exp_conditions}}
+\centering
+\begin{tabular}{lccc}
+\hline
+Exp Num & Experiment Type & OM (wt\%) & Shear velocity (m/s) \\
+\hline
+1 & Lab Sphere     & NA    & NA    \\
+2 & Silica         & NA    & NA    \\
+3 & Floc Shear 1   & 2     & 0.02  \\
+4 & Floc Shear 2   & 2     & 0.03  \\
+5 & Floc Shear 3   & 2     & 0.04  \\
+6 & Floc OM 1     & 1     & 0.04  \\
+7 & Floc OM 2     & 2     & 0.04  \\
+8 & Floc OM 3     & 3     & 0.04  \\
+\hline
+\multicolumn{4}{l}{NA: Not applicable.}
+\end{tabular}
+\end{table}
+
+Grain-size distributions for the silica and montmorillonite were measured using a Camsizer and a Mastersizer, respectively (Fig.~\ref{fig:2}b), following the procedure of \citeA{nghiem2025flocculation}. In brief, samples were dispersed in deionized water, sonicated to break up aggregates, and analyzed to obtain particle-size distributions by dynamic image analysis (Camsizer) and laser diffraction (Mastersizer). Combined, these two minerals span nearly three orders of magnitude in diameter, with primary particles ranging from $2 \times 10^{-7}$ to $2 \times 10^{-4}$~\textmu{}m (percent finer by mass). For the mixed-floc runs, a composite distribution was calculated as the 50:50 mass-weighted average of the two minerals. 
+
+\subsection{Image Processing Methods for Floc Velocity and Diameter}
+
+The floc tracking analysis began with processing every frame of the recorded video sequence. Each frame was converted to an eight-bit grayscale image using OpenCV, and a time-averaged background image (computed by averaging a block of 1000 consecutive frames) was subtracted from each image to isolate transient features such as moving flocs (Fig.~\ref{fig:3}a).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/3.pdf}
+    \caption{
+    Image processing workflow used for floc analysis. (a) Example of a background-subtracted image, highlighting transient objects such as flocs. (b) Detected and contoured particles passing focus and sharpness thresholds (outlined in red) with raw velocity vectors overlaid. (c) Local background flow field calculated by PIV from tracer particles. (d) Example of a tracked floc with both its raw and corrected (background-subtracted) settling velocity vectors indicated.
+    }
+    \label{fig:3}
+\end{figure}
+
+Particle boundaries in each image were detected from intensity gradients using a global threshold of 200 applied to the normalized residual image. To retain only sharp and well-focused flocs, candidate objects were required to exceed a Laplacian variance threshold of 5 (measuring focus/sharpness) and to have an intensity standard deviation greater than 5 within their contour \cite{pertuz2013analysis}. These specific threshold values were optimized for our experimental conditions and image resolution, and may vary between different setups. Only particles meeting both criteria were accepted for further analysis and are highlighted in red in Fig.~\ref{fig:3}b. For each accepted object, we record the planform area in image pixels $A_{\mathrm{px}}$ (later converted to an equivalent diameter after spatial calibration) and the centroid coordinates $(x_c,y_c)$ (for subsequent velocity estimation).
+
+To express diameters and velocities in physical units, we calibrated pixel size using a precision stage micrometer imaged under the same optical conditions as the experiments. Comparing the pixel spacing between micrometer markings with their true separations (in micrometers) yielded a scale factor of \(0.45~\mu\mathrm{m\,px^{-1}}\). We applied this factor to all subsequent analyses to convert particle dimensions and inter-frame displacements from pixels to micrometers; velocities were then obtained from these displacements using the recorded frame interval.
+
+Settling velocities were obtained by frame-to-frame tracking with a conservative nearest-neighbor association: for each detection in frame \(t\), we searched within a 50-pixel radius in frame \(t{+}1\) for candidate matches and scored each candidate \(j\) using two equally weighted, normalized differences—the equivalent concave-hull diameter \(d_{\mathrm{ch}}\) (px) and the Laplacian-variance sharpness \(L\) (arb. units)—so that \(S_j=\tfrac12\big(|d_{\mathrm{ch},j}-d_{\mathrm{ch},t}|/d_{\mathrm{ch},t}+|L_j-L_t|/L_t\big)\); we selected the candidate with the smallest \(S_j\) provided that \(|d_{\mathrm{ch},j}-d_{\mathrm{ch},t}|/d_{\mathrm{ch},t}\le 0.10\) and \(|L_j-L_t|/L_t\le 0.10\), otherwise the track was terminated to avoid spurious links from rapid shape or focus changes; the settling velocity for that interval was then computed as \(w_s=\Delta y\,s/\Delta t\), where \(\Delta y\) is the vertical centroid shift (px, positive downward), \(s\) is the spatial calibration (e.g., \(0.45~\mu\mathrm{m\,px^{-1}}\)), and \(\Delta t\) is the frame interval (s).
+
+
+Frame-to-frame particle displacements yield raw two-dimensional velocity vectors that combine gravitational settling with background flow in the imaging plane. To isolate the settling signal, we first computed a local 2D flow field for each frame pair using particle image velocimetry (PIV) applied to images digitally filtered to retain only tracers smaller than \(10~\mu\mathrm{m}\) that behave as passive flow followers (Fig.~\ref{fig:3}c), following \citeA{smith2015image}. For each tracked floc, we then subtracted the corresponding local flow vector—bilinearly interpolated at the floc centroid—from the floc’s raw trajectory vector; this vector differencing produces a background-corrected motion (Fig.~\ref{fig:3}d, gray arrow raw; white arrow corrected), from which we report the vertical component as the settling velocity \(w_s\). All settling velocities in this study refer to this corrected, background-subtracted quantity.
+
+
+After velocity correction, floc diameters were derived from each particle’s projected area. Two common image-based metrics are used to estimate diameter: the Feret diameter (maximum caliper length across the projection) and the equivalent circular diameter (ECD), defined as the diameter of a circle with the same projected area \cite{jarvis2005measuring, smith2015image}. The Feret diameter is sensitive to orientation and outliers, often overestimating size for irregular or elongated flocs. By contrast, the area-equivalent diameter—especially when computed from a concave hull—can better represent irregular shapes by de-emphasizing extreme protrusions, though it may underrepresent thin filaments. Accordingly, we adopt the concave-hull ECD (with \(\alpha=0.05\)), corresponding to the projected-area–equivalent diameter of \citeA{smith2015image}, while acknowledging that alternative definitions are reasonable \cite{jarvis2005measuring}. Particles were segmented with binary masks, boundaries were traced using a concave-hull algorithm, the enclosed area was measured, and the diameter of a circle of equal area was computed and used as \(d_f\) in all subsequent log–log analyses.
+
+
+\subsection{Calibration and Settling Behavior Analysis}
+
+We calibrated our setup with Experiments~1 and~2, which measured the settling of laboratory spheres ($50~\mu$m) and natural silica grains (Fig.~\ref{fig:4}a). Settling velocities were fitted with Stokes’ law (Eq.~\eqref{eq:stokes}), treating the shape factor $b_1$ as a free parameter. For the spheres, the best-fit $b_1 = 17.7$ agrees closely with the theoretical value of $18$ (Fig.~\ref{fig:4}b). This slight deviation from theory suggests a small systematic bias in our measurements, leading to observed settling velocities that are approximately $1.7\%$ faster than expected ($|17.7 - 18| / 18 \approx 1.7\%$). This minor effect is considered negligible given the much larger scatter in the floc settling data. In contrast, silica grains settled more slowly, yielding $b_1 = 29.2$, a drag increase attributable to their angular, non-spherical shapes; \citeA{ferguson2004simple} reported a comparable $b_1 \approx 24$ for natural sediments of similar morphology.
+
+Compared with silica, flocs settled more slowly and showed substantially greater dispersion in velocity at a given diameter (Fig.~\ref{fig:4}b). Yet flocs and silica exhibited broadly similar projected shapes—sphericity and angularity—based on qualitative assessment (Fig.~\ref{fig:4}a). Given these comparable shape factors, the reduced settling of flocs is attributed to their lower effective density and highly porous, irregular internal structure \cite{kranenburg1994fractal, winterwerp1998simple}. Consequently, the floc data are not described by the standard Stokes formulation (Eq.~\eqref{eq:stokes}) and instead require the floc-specific relation (Eq.~\eqref{eq:floc_settling}), which introduces the fractal dimension \(n_f\) and the primary particle diameter \(d_p\) as additional parameters.
+
+\begin{figure}[htbp]
+    \centering    \includegraphics[width=1\textwidth]{figures/4.pdf}
+    \caption{
+    (a) Images of a laboratory sphere (Exp.~1), silica grain (Exp.~2), and a representative floc (Exp.~5). The 30~$\mu$m scale bar applies to all. (b) Log--log plot of settling velocity ($w_s$) vs.\ diameter ($d_f$) for spheres (green circles, Exp.~1), silica (red circles, Exp.~2), and aggregated flocs (blue circles, Exps.~3--8). Sphere and silica fits use Stokes’ law (Eq.~\eqref{eq:stokes}), yielding shape factors ($b_1$) of 17.7 and 29.2. The floc data fit the fractal settling model ($w_s \propto d_f^{n_f - 1}$) with a slope of 0.9, giving an apparent fractal dimension $n_f = 1.9$. (c) Sensitivity of the fractal settling model (Eq.~\eqref{eq:floc_settling}) to assumed primary particle diameter ($d_p$). The floc data are compared to theoretical predictions using $n_f = 1.9$ for a primary particle size ($d_p$) of $10^{-6}$~m (dashed line) and $10^{-5}$~m (solid red line). This highlights how the choice of $d_p$ controls the model fit, a key uncertainty in the conventional approach.
+    }
+    \label{fig:4}
+\end{figure}
+
+However, directly calculating $n_f$ by fitting Eq.~\eqref{eq:floc_settling} to the floc data is problematic because the primary-particle diameter, $d_p$, is unknown. Although our experiments have known distributions of input particle sizes (Fig.~\ref{fig:2}b), we do not know which particle sizes are actually incorporated into any given floc. Even if we could measure the primary particle sizes directly, the fractal theory necessitates specifying only a single value for a characteristic primary particle size, and it is unclear how to define this value from a distribution. Moreover, the assumed value for $d_p$ exerts a strong influence on the inferred fractal dimension $n_f$ (Fig.~\ref{fig:4}c): $d_p = 1\times 10^{-6}$~m yields $n_f = 2.77$; $d_p = 1\times 10^{-5}$~m gives $n_f = 2.10$; and $d_p = 1\times 10^{-4}$~m produces $n_f = 3.00$ (Fig.~\ref{fig:4}c).
+
+To circumvent the unknown primary-particle size \(d_p\), we exploit the log–log form implied by Eq.~\eqref{eq:floc_settling}: \(\log w_s=(n_f-1)\log d_f + C\), where \(C\) collects parameters (including \(d_p\)). Thus the slope in \(\log w_s\)–\(\log d_f\) space yields \(n_f=\text{slope}+1\), independent of \(d_p\). For the full floc population, the fitted slope is \(0.90\), giving \(n_f=1.90\) (Fig.~\ref{fig:4}b). However, if structural heterogeneity causes \(n_f\) to covary with size, a bulk regression can exhibit Simpson-type aggregation bias. We therefore stratify flocs by their in situ, image-based fractal dimension and fit separate regressions within each stratum; the resulting slopes provide subgroup-specific estimates of \(n_f\) and reveal any systematic dependence on structure.
+
+\subsection{Estimating Fractal Dimension of Flocs from 2D Projections}
+
+Fractal theory relates the fractal dimension $n_f$ to the primary particle diameter ($d_p$) and the number of primary particles ($N$) comprising a floc (Eq.~\eqref{eq:fractaltheory}). In natural systems, however, neither $d_p$ nor $N$ is constant or directly measurable during experiments. As a result, numerous methods have been developed to estimate floc fractal dimensions from image-based properties. These approaches are inherently two-dimensional, yielding an apparent fractal dimension $n_f^{(2\mathrm{D})}$ that may differ from the hydrodynamically relevant three-dimensional value. Throughout this paper, we denote the 3D fractal dimension simply as $n_f$, and use $n_f^{(2\mathrm{D})}$ when referring specifically to the 2D image-based measure.
+
+The perimeter--area method has previously been used to estimate the 2D fractal dimension of flocs~\cite{lee2004prediction, maggi2004method, tang2015reconstructing}. This method relies on the empirical scaling relation:
+\begin{equation}
+n_{f,\,\text{perimeter}}^{\text{(2D)}} = 2\,\frac{\log P}{\log A}
+\end{equation}
+where $P$ is the measured perimeter and $A$ is the projected area of the particle in the 2D image. This expression is derived by analogy to the Euclidean relation $P = k A^{1/2}$, which holds for smooth (non-fractal) boundaries with $n_f = 1$. The underlying assumption is that, for a fractal boundary, the exponent in this scaling law approximates the true boundary fractal dimension $n_f^{(2\mathrm{D})}$. However, both mathematical analysis and geometric constructions (e.g., the Koch curve) demonstrate that this assumption breaks down for truly fractal sets~\cite{cheng1995perimeter,frame_mandelbrot_neger_2025}. For such boundaries, the perimeter may diverge while the enclosed area remains finite, making the relation $P = k A^{n_f/2}$ mathematically inconsistent. As a result, perimeter–area scaling does not reliably recover the true fractal dimension from 2D projections.
+
+Box-counting, in contrast, provides a mathematically rigorous and more general means of estimating the fractal dimension for both boundaries and interiors~\cite{foroutan1999advances}. A key advantage of box-counting is that it does not require knowledge of the primary particle size ($d_p$) or the number of constituent particles ($N$), making it particularly well-suited for natural flocs where these values are unknown or variable~\cite{bellouti1997flocs, spencer2022quantification}. The box-counting dimension $n_{f,\text{box-counting}}^{\text{(2D)}}$ is determined by measuring how the number of occupied boxes $N(\epsilon)$ at a given scale $\epsilon$ varies with scale~\cite{mandelbrot1967long}:
+\begin{equation}
+n_{f,\text{box-counting}}^{\text{(2D)}} = \frac{\log N(\epsilon)}{\log(1/\epsilon)}
+\end{equation}
+
+When analyzing objects with finite extent in situ imaging, finite-size effects and image pixelation make the estimated fractal dimension sensitive to the available scaling range. For a digital image of $N \times N$ pixels, the practical range of box sizes ($\epsilon$) spans from 1 to $N$ pixels. Reliable estimation of $n_{f,\text{box-counting}}^{\text{(2D)}}$ requires a sufficiently broad range of box sizes to establish a stable linear trend on a log--log plot of $N(\epsilon)$ versus $1/\epsilon$. If the image is too small, the limited scaling range can yield unstable or underestimated values of $n_{f,\text{box-counting}}^{\text{(2D)}}$. For example, a $20 \times 20$ pixel image provides only about 1.3 orders of magnitude in scale, which is insufficient for robust fitting and fails to recover the expected $n_{f,\text{box-counting}}^{\text{(2D)}} = 2$ for a smooth circle (Fig.~\ref{fig:5}a). In contrast, a $100 \times 100$ pixel image spans two full orders of magnitude, typically providing 6--7 usable data points for regression and a more reliable estimate of $n_{f,\text{box-counting}}^{\text{(2D)}}$. Panel (b) of Fig.~\ref{fig:5} shows examples for two experimental flocs at high image resolution, illustrating the application of the box-counting method to real data. In this study, all reported values of the 2D fractal dimension ($n_{f}^{\text{(2D)}}$) in the results and discussion sections refer exclusively to measurements obtained by the box-counting method. This distinction is maintained throughout the manuscript $n_{f}^{\text{(2D)}}$ denotes the 2D box-counting dimension.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/5.pdf}
+    \caption{
+    (a) Illustration of resolution dependence in box-counting dimension estimation. Top: A perfect circle embedded in $20 \times 20$ and $200 \times 200$ pixel grids shows that coarse grids systematically underestimate the fractal dimension. Bottom: Plot of measured fractal dimension $n_f$ versus image size $n$, highlighting a resolution-dependent regime at low $n$ and a stable region at high $n$ where the estimate converges toward the theoretical value for a smooth circle.
+    (b) Example box-counting dimension estimates for two experimental flocs imaged at $>100 \times 100$ pixel resolution.
+    }
+    \label{fig:5}
+\end{figure}
+
+\subsection{Estimating Primary Particle Diameter ($d_p$) from Settling Data}
+
+In most in~situ experiments, the primary particle diameter \(d_p\) is assumed from the input sediment-size distribution and hypothesized floc-formation conditions because \(d_p\) is rarely resolvable directly. Here we identify \(d_p\) empirically by leveraging multiple floc subpopulations with distinct fractal dimensions \(n_f\). As implied by Eq.~\eqref{eq:floc_settling}, \(d_p\) does not affect the slope of the \(\log w_s\)–\(\log d_f\) relation (the slope is \(n_f-1\)), but it fixes a common intersection of the subgroup regressions. This is because at \(d_f=d_p\), the object is a primary particle (not a floc), so substituting \(d_f=d_p\) into Eq.~\eqref{eq:floc_settling} yields \(w_s=(g\,R_s/b_1\nu)\,d_p^{2}\), which is independent of \(n_f\). Consequently, regressions from any number of \(n_f\)-stratified subpopulations intersect at \((d_f, w_s)=(d_p,\,(g\,R_s/b_1\nu)\,d_p^{2})\). In our synthetic example (Fig.~\ref{fig:1}), three subgroups with \(n_f \approx 1.5,\,2.0,\) and \(2.5\) produce regression lines that converge at \(d_p \approx 10^{-5}\,\mathrm{m}\), because the synthetic data were generated using this prescribed primary-particle diameter across varying fractal dimensions, thereby illustrating the method.
+
+However, this method assumes that all fractal subgroups share the same drag factor \(b_1\). In reality, \(b_1\) may vary because drag can depend on floc structure and therefore on fractal dimension. As a result, the relationship between the observed intersection diameter \(d_{f,\mathrm{int}}\) and the true primary particle diameter \(d_p\) must account for differences in \(b_1\). For example, for two subgroups of flocs with fractal dimensions \(n_{f,j}\) and \(n_{f,k}\), and drag factors \(b_{1,j}\) and \(b_{1,k}\), the intersection diameter is given by
+\begin{equation}
+d_{f,\mathrm{int}} = d_p \left( \frac{b_{1,j}}{b_{1,k}} \right)^{1/(n_{f,j} - n_{f,k})},
+\label{eq:dpintersection}
+\end{equation}
+which generalizes the ideal case. When \(b_{1,j}=b_{1,k}\), this expression reduces to
+\begin{equation}
+d_{f,\mathrm{int}} = d_p,
+\label{eq:dpintersectionideal}
+\end{equation}
+so that all regression lines converge exactly at the primary particle diameter.
+
+
+
+\section{Results}
+
+\subsection{Stratifying 2D Box-Counting to Infer 3D Fractal Dimension}
+
+As an initial test case for flocs using our stratification methodology, we computed the two-dimensional box-counting fractal dimension, \(n_f^{(2\mathrm{D})}\), for Experiment~3. To evaluate the impact of stratification, we divided the dataset into bins of width 0.1, 0.05, and 0.025, corresponding to 3, 6, and 12 bins of \(n_f^{(2\mathrm{D})}\), respectively, within a manually defined range from 1.3 to 1.6. Within each bin, we fitted a power-law relation between settling velocity, \(w_s\), and floc diameter, \(d_f\), in log–log space (Figs.~\ref{fig:6}a, d, g). The model \(\log_{10}(w_s) = m \log_{10}(d_f) + b\) was calibrated using an ensemble Markov chain Monte Carlo (MCMC) sampler to obtain robust parameter estimates and verify convergence. After burn-in and thinning, the posterior medians of the slope \(m\) were retained for further analysis. Each median slope was then converted to the hydrodynamically relevant three-dimensional fractal dimension, denoted simply as \(n_f\), using the relation \(n_f = m + 1\).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/6.pdf}
+    \caption{Stratification of floc data by two-dimensional (2D) box-counting fractal dimension (\(n_f^{(2\mathrm{D})}\)) for Experiment~3, illustrating how binning strategy influences the estimation of three-dimensional fractal dimensions. (a--c) Analysis using 3 bins: (a) log–log plots of settling velocity (\(w_s\)) versus floc diameter (\(d_f\)), color-coded by 2D fractal-dimension bin; (b) fitted slopes (\(m\)) for each bin; (c) resulting three-dimensional fractal dimension (\(n_f = m + 1\)) plotted against mean \(n_f^{(2\mathrm{D})}\) for each bin, showing a strong linear relationship. (d--f) Same analysis using 6 bins; (g--i) using 12 bins, highlighting increased scatter and reduced regression stability with finer binning.}
+    \label{fig:6}
+\end{figure}
+
+Plotting the inferred 3D fractal dimension, \(n_f\), against the corresponding group-mean 2D value, \(n_f^{(2\mathrm{D})}\), allows us to assess the stability of our binning strategy. As a first-order approximation, a linear model can describe the binned data, yielding high coefficients of determination for data binned into 3 and 6 groups (\(R^2 = 0.99\) and \(R^2 = 0.97\), respectively), and a more moderate association for the 12-bin case (\(R^2 = 0.63\); Fig.~\ref{fig:6}c,\,f,\,i).
+
+This linear model, though a simplification of the underlying nonlinear relationship between \(n_f^{(2\mathrm{D})}\) and \(n_f\), is used here as a diagnostic to test how the estimated three-dimensional fractal dimension \(n_f\) varies with the number of bins in the stratification. The decrease in \(R^2\) with finer binning highlights the loss of statistical power when bin populations become too small (e.g., fewer than \(\sim 50\) particles), which increases scatter due to sampling variability. Based on this stability analysis, we adopt a bin width of 0.1 for subsequent analyses, ensuring each bin contains sufficient observations for robust parameter estimation with a more physically representative nonlinear model.
+
+
+\subsection{Inferring Fractal Dimension on All Floc Data}
+
+We expanded the analysis to all floc datasets (Experiments~3--8). Within each 0.1-wide \(n_f^{(2\mathrm{D})}\) bin, outliers were objectively identified and removed using the interquartile range (IQR) filter: any particle with \(n_f^{(2\mathrm{D})}\) outside \([Q_1 - 1.5\,\mathrm{IQR},\ Q_3 + 1.5\,\mathrm{IQR}]\), where \(\mathrm{IQR} = Q_3 - Q_1\), was excluded. Only bins retaining at least 50 particles after filtering were analyzed, yielding a typical count of five to nine bins per experiment. For each bin, the posterior median slope \(m\) from the log–log regression was converted to the corresponding three-dimensional fractal dimension as \(n_f = m + 1\). Inset panels in Fig.~\ref{fig:7} show \(n_f\) versus the bin-averaged \(n_f^{(2\mathrm{D})}\). Across all six experiments, stratified results reveal a strong positive correlation between these metrics, consistently supported by high \(R^2\) values.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/7.pdf}
+    \caption{Comparison of stratified and aggregated fits for all floc datasets. (a–c) Varying shear velocities of 0.02, 0.03, and 0.04~m\,s$^{-1}$. (d–f) Varying organic matter contents of 1\%, 2\%, and 3\%. Inset plots show the relationship between \(n_f^{(2\mathrm{D})}\) and slope-inferred \(n_f\) for each experiment.}
+    \label{fig:7}
+\end{figure}
+
+\subsection{Comparison of Stratified and Aggregated Analysis}
+
+A comparison of stratified and aggregated estimates of the three-dimensional fractal dimension (\(n_f\)) across all experimental conditions is presented in Fig.~\ref{fig:8}. In the stratified approach, data are grouped by similar \(n_f^{(2\mathrm{D})}\) box-counting values, whereas in the aggregated approach, all particles within each experiment are pooled into a single regression. 
+
+Figure~\ref{fig:8}a shows that stratification yields median \(n_f\) values that increase strongly with shear velocity, from 1.62 at low shear to 1.80 at intermediate and 2.07 at high shear. By contrast, the aggregated approach produces flatter medians of 1.92, 1.85, and 1.97 for the same conditions. 
+
+Figure~\ref{fig:8}b demonstrates that increasing organic matter (OM) content reduces median \(n_f\) in both approaches. Stratified medians decrease from 1.76 to 1.66 to 1.55 for 1\%, 2\%, and 3\% OM, respectively, while aggregated medians decrease more modestly from 1.85 to 1.75 to 1.73. In all cases, stratified values remain consistently 0.1--0.2 units lower than their aggregated counterparts.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/8.pdf}
+    \caption{Comparison of stratified and aggregated (bulk) analyses of floc fractal dimensions. (a) Median inferred \(n_f\) versus shear velocity. (b) Median \(n_f\) versus organic matter (OM) content. (c) Relationship between three-dimensional (\(n_f\)) and two-dimensional (\(n_f^{(2\mathrm{D})}\)) box-counting fractal dimensions across all conditions, colored by experiment type. (d) Mapping between 2D and 3D fractal dimensions: blue dashed line, theoretical relation \(n_f = n_f^{(2\mathrm{D})} + 1\); red solid line, empirical 2D box-counting to 3D box-counting (BC) conversion; red dashed line, empirical 2D box-counting to 3D power-law (PL) conversion \cite{wang2022fractal}. Experimental data (black markers) align most closely with the empirical box-counting model.}
+    \label{fig:8}
+\end{figure}
+
+\subsection{Comparing 2D and 3D Fractal Dimension Relationships}
+
+Our experimental results (Fig.~\ref{fig:8}c) reveal a consistent positive relationship between the two- and three-dimensional fractal dimensions. Plotting the stratified median \(n_f\) against the binned \(n_f^{(2\mathrm{D})}\) shows that denser, more compact structures (higher \(n_f^{(2\mathrm{D})}\)) systematically exhibit larger \(n_f\). This trend holds regardless of whether the grouping parameter is shear velocity or organic matter (OM) content. Over the limited range of our data, the relationship appears approximately linear.
+
+To assess the underlying physical relationship, we compared our results to theoretical and empirical conversion models (Fig.~\ref{fig:8}d). A common reference is the idealized linear relationship for perfectly space-filling, Euclidean objects, \(n_f = n_f^{(2\mathrm{D})} + 1\) (blue dashed line), which correctly describes smooth solids such as a sphere (\(n_f^{(2\mathrm{D})}=2\), \(n_f=3\)). Flocs, however, are porous aggregates that do not fully fill space, so this model overpredicts their structural dimensions.
+
+More appropriate comparisons are the empirical models proposed by \citeA{wang2022fractal}, derived from paired measurements of natural aggregates. These include a power-law (PL) conversion, \(n_{f,\mathrm{PL}} = 0.2015\,(n_f^{(2\mathrm{D})})^{4.079}\) (red dashed line), and a box-counting (BC) conversion, \(n_{f,\mathrm{BC}} = 0.8118\,(n_f^{(2\mathrm{D})})^{1.8054}\) (red solid line). The PL model is based on general 2D fractal dimension estimates, whereas the BC model specifically uses box-counting values.
+
+Our data fall between these two empirical curves and align most closely with the BC conversion, while lying well below the idealized Euclidean line. This suggests that although the stratified data appear roughly linear within our observed range of \(n_f^{(2\mathrm{D})}\) (Fig.~\ref{fig:8}c), the underlying relationship is inherently nonlinear.
+
+\subsection{Inferring Primary Particle Diameter ($d_p$)}
+
+To estimate the primary particle diameter ($d_p$), we used a Bayesian approach to quantify uncertainty in the intersection method. For each stratified floc group, we drew samples from the posterior distribution of the log--log settling velocity fits, and computed all pairwise intersections between fits from different groups using Eq.~\eqref{eq:dpintersectionideal} (assuming a constant shape factor, $b_1$).
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/9.pdf}
+    \caption{
+        Cumulative percent finer by mass distributions comparing known input and inferred primary particle diameters ($d_p$) for all experiments. Panels show (a--c) varying shear velocity and (d--f) varying OM content. The Kolmogorov-Smirnov (KS) statistic quantifies the agreement between the two distributions in each panel.
+    }
+    \label{fig:9}
+\end{figure}
+
+
+Fig.~\ref{fig:9} compares the cumulative percent finer by mass distributions for the known input particle sizes and the inferred $d_p$ from the intersection approach. The Kolmogorov-Smirnov (KS) statistic, reported in each panel, quantifies the maximum difference between the two cumulative distributions: a KS value of 0 indicates perfect agreement, while a value near 1 is a complete mismatch. Values between 0.29 and 0.41, as observed across all six experimental conditions, indicate moderate agreement, particularly in the central tendency (e.g., alignment of medians).
+
+The input grain size distribution in Fig.~\ref{fig:9} shows all particle sizes added to the experiments, but not all of these necessarily serve as primary particles in flocs. Some input size fractions—such as the finest clays or coarsest silts and sands—may not be equally incorporated into flocs. Consequently, differences between the input grain size and inferred primary particle ($d_p$) distributions may reflect both uncertainties in the intersection method and real selective incorporation of certain sizes into flocs. Prolonged cloudiness after the experiments suggests that some very fine particles remained unflocculated. This, in turn, implies that floc formation may favor incorporation of coarser particles from the input sediment distribution, while the finest fraction is less likely to be included in flocs and instead remains suspended.
+
+To address variability in the shape factor among fractal groups, we apply Eq.~\eqref{eq:dpintersection} so that the intersection diameter becomes a function of the primary particle diameter ($d_p$), shape factor ($b_1$), and fractal dimension ($n_f$). Previous studies, including \citeA{strom2011explicit}, suggest that $b_1$ increases as $n_f$ increases. For example, if $b_1$ rises from 10 to 100 across fractal dimensions, the resulting intersection diameter $d_{\text{intersect}}$ can be an order of magnitude larger than the true $d_p$ for a fixed $n_f$. Conversely, if $b_1$ decreases with $n_f$, $d_{\text{intersect}}$ may be an order of magnitude smaller than $d_p$.
+
+To illustrate the effect of the shape factor, we plot settling velocity versus diameter for two fractal groups ($n_f = 1.5$ and $n_f = 2.0$), both with a common primary particle diameter of $10~\mu$m, using Eq.~\eqref{eq:floc_settling} (Fig.~\ref{fig:10}a). For $n_f = 1.5$, we fix $b_1 = 50$, and for $n_f = 2.0$, we vary $b_1$ from 10 to 100. As the shape factor increases with fractal dimension, the intersection diameter $d_{\text{intersect}}$ between the two groups becomes greater than the true primary particle diameter. The opposite holds if $b_1$ decreases with $n_f$.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/10.pdf}
+    \caption{
+    Influence of the shape factor (\(b_1\)) on the intersection diameter (\(d_{\text{intersect}}\)) between floc groups of different fractal dimension.
+    (a) Increasing \(b_1\) with \(n_f\) shifts \(d_{\text{intersect}}\) above the primary particle diameter \(d_p\), while decreasing \(b_1\) shifts it below.
+    (b) Most measured floc diameters lie to the right of \(d_{\text{intersect}}\) when using previous methods, violating the physical constraint that \(d_{\text{intersect}}\) must fall below all observed diameters.
+    (c) Example where \(d_{\text{intersect}} > d_p\), emphasizing that \(b_1\) must rise with \(n_f\) to preserve the proper size hierarchy as denser flocs experience greater drag.
+    }
+    \label{fig:10}
+\end{figure}
+
+We plot our data with the intersection diameter found using previous methods in Fig.~\ref{fig:10}b and find that most of the measured diameters lie to the right of $d_{\text{intersect}}$. Based on theory, since the primary particle diameter represents the smallest constituent in the system, the intersection must logically occur to the left of all measured particle diameters. Therefore, only scenarios where $d_p < d_{\text{intersect}}$ are physically plausible.
+
+This constraint implies a necessary relationship between $b_1$ and $n_f$: to maintain $d_p < d_{\text{intersect}}$ as $n_f$ increases, $b_1$ must also increase. This requirement ensures that the primary particle remains the smallest size class in the system. Such a trend is consistent with both theoretical expectations and experimental observations, which suggest that denser, less permeable flocs (i.e., those with higher $n_f$) experience greater drag, corresponding to higher values of $b_1$ \cite{strom2011explicit}.
+
+\section{Discussion}
+A central finding of this research is the discrepancy between fractal dimensions derived from aggregated datasets and those obtained from datasets stratified by 2D fractal dimension. As illustrated by our conceptual model (Fig.~\ref{fig:1}) and supported by experimental results (Figs.~\ref{fig:7},~\ref{fig:8}), aggregating data from a floc population with inherent structural variability, meaning a range of true \( n_f \) values, can lead to a bulk-fitted \( n_f \) that overrepresents some structural subgroups while failing to capture the full diversity present within the population. This approach may obscure underlying trends and can result in fitted fractal dimension values that are potentially misleading.
+
+\subsection{Effect of Shear Velocity and Organic Matter (OM)}
+
+The stratified analysis reveals a clear increase in the inferred three-dimensional fractal dimension (\(n_f\)) with shear velocity (Fig.~\ref{fig:8}). Median values rise from 1.62 at low shear to 2.07 at high shear, indicating that stronger shear promotes the breakdown of loose, low-\(n_f\) flocs and the formation of more compact, shear-resistant aggregates. This trend is consistent with previous findings; for example, \citeA{winterwerp1998simple} reported \(n_f\) values as low as 1.4 for fragile marine-snow aggregates and up to 2.2 for robust estuarine flocs. By contrast, the aggregated (bulk) analysis fails to capture this variability, instead yielding median \(n_f\) values that remain comparatively constant with increasing shear.
+
+Increasing organic matter (OM) content results in a systematic decrease in the inferred 3D fractal dimension, (\(n_f\)), for both aggregated and stratified approaches (Fig.~\ref{fig:8}). Notably, the stratified analysis yields median (\(n_f\)) values that are consistently 0.1 to 0.2 units lower than those from the aggregated approach across the entire OM gradient. This trend supports the established view that organic matter, especially extracellular polymeric substances (EPS), serves as a ``glue'' that binds particles into larger, more open, and structurally more voluminous flocs with lower fractal dimensions~\cite{nghiem2022mechanistic}. These lower-$n_f$ flocs, although potentially larger in size, possess reduced excess density and, consequently, settle more slowly, a distinction that has important implications for mud transport and deposition dynamics.
+
+Although we cannot assign a unique fractal dimension or settling velocity to a specific shear velocity or organic matter content, due to the interplay of multiple factors such as experimental configuration, applied shear, and sediment composition, the robust trends observed here are broadly consistent with those reported in previous studies. This concordance across different experimental and natural systems lends confidence to the general applicability of our results, even though the exact quantitative relationships are likely to remain system-specific.
+\subsection{2D to 3D Conversion of Fractal Dimension}
+
+The relationship between the two-dimensional box-counting fractal dimension (\(n_f^{(2\mathrm{D})}\)) and the inferred three-dimensional fractal dimension (\(n_f\)) is broadly consistent with models developed for synthetic aggregates. The simple Euclidean conversion, \(n_f = n_f^{(2\mathrm{D})} + 1\), systematically overestimates \(n_f\) across our measured range, whereas our data align more closely with the empirical conversion curves of \citeA{wang2022fractal}, based on computationally generated aggregates.
+
+Although these empirical curves fit our observations better than the idealized linear model, no universally valid mapping between 2D and 3D fractal dimensions exists for natural flocs. Approaches such as those of \citeA{maggi2004method} and \citeA{tang2015reconstructing} depend on specific assumptions, and most synthetic studies, including \citeA{wang2022fractal}, grow aggregates from monodisperse primary particles with fixed size, allowing simple scaling laws to be derived. Natural flocs, by contrast, contain a broad distribution of particle sizes, shapes, and compositions, violating the fixed-\(d_p\) assumption and adding heterogeneity in packing and porosity that is not captured by idealized models. These differences introduce scatter and systematic offsets between natural data and synthetic conversions. Permeability—though not considered here—can also alter settling without changing geometry, further complicating the mapping.
+
+Thus, while empirical 2D–3D conversions are valuable references, they are not fundamental laws and remain system-specific, shaped by the sedimentological and environmental context of the flocs. The close match between our results and the box-counting conversion of \citeA{wang2022fractal} may reflect structural similarities rather than a universally applicable rule. Nevertheless, the 2D box-counting dimension remains a practical stratification tool. By quantifying within-population variability and enabling direct experimental calibration, our approach provides more robust, context-sensitive inference of the hydrodynamically relevant 3D fractal dimension, helping to reconcile image-based analyses with predictive models for sediment transport.
+
+\subsection{Constraining Primary Particle Diameter ($d_p$) and Shape Factor ($b_1$)}
+
+The primary particle diameter ($d_p$) and the drag or shape factor ($b_1$) are key parameters in fractal settling theory, yet they are rarely measured directly in experimental or field studies. In this analysis, we estimate $d_p$ by identifying the intersection of log--log settling velocity trends corresponding to each $n_f$ bin (Fig.~\ref{fig:9}). In principle, as $d_f$ approaches $d_p$, all floc populations should converge to the settling velocity characteristic of a single primary particle, regardless of fractal dimension. Thus, the intersection diameter, $d_{\text{int}}$, serves as a practical proxy for $d_p$ in these models.
+
+The intersection analysis yields a median $d_{\text{int}}$ that agrees well with the median of the input sediment sizes, yet the inferred distribution is much narrower: about two orders of magnitude wide compared with nearly four orders in the input material.  Two explanations are possible.  Either (i) the imaging system fails to capture the very smallest grains, biasing the estimate upward, or (ii) only a subset of the source material (coarse silt to fine sand) actually participates in forming the larger flocs that dominate our observations.  The present data cannot fully distinguish between these scenarios.
+
+The method also rests on an implicit assumption that $b_1$ is constant across all $n_f$ classes (Eq.~\eqref{eq:dpintersectionideal}).  If $b_1$ varies with structure, Eq.~\eqref{eq:dpintersection} shows that $d_{\text{int}}$ will deviate from $d_p$.  Our analysis (Fig.~\ref{fig:10}) indicates that physically plausible intersections ($d_p \le d_{\text{int}}$) require $b_1$ to increase, or at least remain unchanged, as $n_f$ increases.  This trend is consistent with theory and experiments: denser, less permeable flocs (higher $n_f$) experience greater form drag and therefore larger $b_1$ values \cite{strom2011explicit}.
+
+Uncertainty in $d_p$ propagates directly into floc settling models. Fig.~\ref{fig:4}b demonstrates that the value of $n_f$ inferred from Eq.~\eqref{eq:floc_settling} is highly sensitive to the choice of $d_p$. Although the slope-based estimate of $n_f$ ($n_f = m + 1$) avoids assuming a particular $d_p$, predictive modeling ultimately requires specification of both parameters. Assigning a single representative $d_p$, such as the median grain size, may not capture the full variability of natural systems. In practice, the effective $d_p$ relevant for flocculation can be both narrower in range and offset in value relative to the bulk sediment size distribution.
+
+\subsection{Implications}
+
+The 3D fractal dimension of mud flocs, $n_f$, is a key parameter in morphodynamic models of fine-grained sediment transport. Historically, modelers have adopted a relatively narrow range of values for $n_f$, typically between 2.0 and 2.2, and generally assumed $n_f > 2$~\cite{kranenburg1994fractal, son2008flocculation, winterwerp1998simple, winterwerp2004introduction, winterwerp2006heuristic}. These studies, inferred the fractal dimension by aggregating settling velocity data from entire floc populations. When we apply this same classical aggregation technique to our own experimental data, we derive a similar fractal dimension of approximately 2.0. This consistency confirms that our experimental flocs are physically comparable to those observed in previous work. However, this apparent agreement masks a significant underlying complexity.
+
+By stratifying flocs according to their 2D fractal properties, our method reveals systematic trends that are masked by conventional aggregation. We find that the median $n_f$ increases with higher shear velocity (from 1.62 to 2.07) and decreases with increasing organic matter content (from 1.76 to 1.55). In contrast, the aggregated analysis yields comparatively flatter and consistently higher median values by 0.1--0.2 units. These results indicate that relying on a single, representative fractal dimension near 2.0, as is typical in previous studies and models, likely leads to overestimation of mud floc compactness and settling rates.
+
+This has important implications for sediment transport prediction. For instance, using the Stokes' law-based formulation for floc settling velocity, \( w_s \propto d_p^{3-n_f} d_f^{n_f-1} \), lowering \( n_f \) from 2.2 to 1.7 for a typical 400~\textmu m floc (with 4~\textmu m primary particles) produces an order-of-magnitude decrease in settling speed. This directly translates to an order-of-magnitude increase in transport distance. A floc that might be predicted to settle out over 10 km would instead travel 100 km under this revised, more porous structural model. As a result, mud flocs in natural environments settle more slowly and are transported substantially farther than predicted by existing models that rely on aggregated fractal dimensions. Therefore, the efficiency of mud retention in coastal and estuarine environments may be considerably lower than currently assumed, with significant consequences for landscape evolution and carbon burial models.
+
+Given these implications for sediment transport prediction, it remains essential to provide a clear and practical guideline for selecting the fractal dimension, \( n_f \), in large-scale modeling applications. In light of our findings, we advise against the use of the classical range \( 2.0\text{--}2.2 \). While aggregated analyses yield \( n_f \approx 2.0 \), stratified results demonstrate that this value represents only the upper end of a much broader distribution.
+
+For practitioners, we recommend adopting a more conservative, lower value for \( n_f \), and, where feasible, representing the fractal dimension as a distribution rather than a single value, given its sensitivity to environmental conditions. Our results indicate that although aggregated data can yield fractal dimensions within the conventional range, a substantial proportion of flocs in most systems, as observed in our experimental setup, exhibit lower \( n_f \) values, typically within the range of 1.6 to 2.0. These lower values better capture the behavior of more porous, slow-settling flocs that are likely to dominate transport. Selecting a lower \( n_f \) in models will yield predictions of reduced deposition and increased sediment bypass relative to approaches using higher \( n_f \) values. While no single value can capture the full complexity of natural flocculation, shifting the default assumption to a lower \( n_f \) is a pragmatic and more physically grounded step for predicting the fate of fine sediment.
+
+\section{Conclusions}
+
+This study demonstrates that accounting for heterogeneity within floc populations is essential for accurate sediment transport modeling. Aggregating settling data across flocs with varying fractal dimensions often produces misleading results due to Simpson’s Paradox: trends present within structural subgroups can be lost or distorted when data are pooled. By stratifying flocs based on 2D box-counting fractal dimensions, we resolve these structural differences, enabling more physically meaningful inference of floc transport parameters.
+
+The stratified approach reveals physical trends that aggregation obscures. Within this framework, the hydrodynamically inferred fractal dimension \(n_f\) increases with shear stress and decreases as organic matter content rises, consistent with a shift from loose flocs to more compact aggregates. The same analysis establishes an empirical relationship between 2D and 3D fractal dimensions that matches the experimental data better than conversions based on synthetic aggregates. It also provides a way to constrain the effective primary particle diameter \(d_p\) and shows that the drag or shape factor \(b_1\) must increase with \(n_f\) to maintain physical consistency.
+
+These results demonstrate that the common practice of applying a single, representative fractal dimension (e.g., \( n_f \approx 2.0\text{--}2.2 \)) in sediment transport models oversimplifies the true diversity of floc structures, leading to systematic predictive errors. Our analysis shows that even moderate structural variability can substantially reduce settling rates and increase sediment transport distances compared to conventional assumptions. Consequently, widespread use of a single value near 2.0 likely overestimates deposition and mud retention in natural systems. For models where sediment bypass and retention are critical, we recommend adopting a more conservative \( n_f \) value in the range 1.6 to 2.0, which better represents the porous, slow-settling flocs that, while present within the floc population, are often effectively hidden in bulk analyses due to aggregation bias. While ultimately models should represent the full distribution of \( n_f \) values to capture natural heterogeneity, a pragmatic step is to shift away from potentially biased, higher values. Making this adjustment is crucial for improving predictions of fine sediment transport, deltaic development, and coastal responses to environmental change.
+
+\section*{Open Research Section}
+All code and analysis workflows supporting the results and conclusions of this study are openly available at \url{https://github.com/braydennoh/FlocTrack}. The repository includes scripts for image analysis, fractal dimension calculation, and all processing steps described in this manuscript. For further questions or access to additional datasets, please contact the corresponding author at braydennoh@fas.harvard.edu.
+
+\section*{Inclusion in Global Research Statement}
+This research did not involve collaborations with local communities or cross-regional partnerships requiring additional disclosure. All research activities were conducted in accordance with institutional and international ethical standards.
+
+\acknowledgments
+BN acknowledges support from Caltech SURF, the Arthur R. Adams SURF Fellowship, and the Saul and Joan Cogen Memorial SURF Fellowship at Caltech. MPL acknowledges support from NASA FINESST Grant 80NSSC20K1645, the NASA Delta-X project funded by the Science Mission Directorate's Earth Science Division through the Earth Venture Suborbital-3 Program NNH17ZDA001N-EVS3, and the National Science Foundation Geomorphology and Land-use Dynamics Grant No. 2136991.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES and BIBLIOGRAPHY
+%
+% \bibliography{<name of your .bib file>} don't specify the file extension
+% don't specify bibliographystyle
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliography{agusample}
+
+
+
+
+%Reference citation instructions and examples:
+%
+% Please use ONLY \cite and \citeA for reference citations.
+% \cite for parenthetical references
+% ...as shown in recent studies (Simpson et al., 2019)
+% \citeA for in-text citations
+% ...Simpson et al. (2019) have shown...
+%
+%
+%...as shown by \citeA{jskilby}.
+%...as shown by \citeA{lewin76}, \citeA{carson86}, \citeA{bartoldy02}, and \citeA{rinaldi03}.
+%...has been shown \cite{jskilbye}.
+%...has been shown \cite{lewin76,carson86,bartoldy02,rinaldi03}.
+%... \cite <i.e.>[]{lewin76,carson86,bartoldy02,rinaldi03}.
+%...has been shown by \cite <e.g.,>[and others]{lewin76}.
+%
+% apacite uses < > for prenotes and [ ] for postnotes
+% DO NOT use other cite commands (e.g., \citet, \citep, \citeyear, \nocite, \citealp, etc.).
+%
+
+
+
+\end{document}
+
+
+
+More Information and Advice:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  SECTION HEADS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Capitalize the first letter of each word (except for
+% prepositions, conjunctions, and articles that are
+% three or fewer letters).
+
+% AGU follows standard outline style; therefore, there cannot be a section 1 without
+% a section 2, or a section 2.3.1 without a section 2.3.2.
+% Please make sure your section numbers are balanced.
+% ---------------
+% Level 1 head
+%
+% Use the \section{} command to identify level 1 heads;
+% type the appropriate head wording between the curly
+% brackets, as shown below.
+%
+%An example:
+%\section{Level 1 Head: Introduction}
+%
+% ---------------
+% Level 2 head
+%
+% Use the \subsection{} command to identify level 2 heads.
+%An example:
+%\subsection{Level 2 Head}
+%
+% ---------------
+% Level 3 head
+%
+% Use the \subsubsection{} command to identify level 3 heads
+%An example:
+%\subsubsection{Level 3 Head}
+%
+%---------------
+% Level 4 head
+%
+% Use the \subsubsubsection{} command to identify level 3 heads
+% An example:
+%\subsubsubsection{Level 4 Head} An example.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  IN-TEXT LISTS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Do not use bulleted lists; enumerated lists are okay.
+% \begin{enumerate}
+% \item
+% \item
+% \item
+% \end{enumerate}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  EQUATIONS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Single-line equations are centered.
+% Equation arrays will appear left-aligned.
+
+Math coded inside display math mode \[ ...\]
+ will not be numbered, e.g.,:
+ \[ x^2=y^2 + z^2\]
+
+ Math coded inside \begin{equation} and \end{equation} will
+ be automatically numbered, e.g.,:
+ \begin{equation}
+ x^2=y^2 + z^2
+ \end{equation}
+
+
+% To create multiline equations, use the
+% \begin{eqnarray} and \end{eqnarray} environment
+% as demonstrated below.
+\begin{eqnarray}
+  x_{1} & = & (x - x_{0}) \cos \Theta \nonumber \\
+        && + (y - y_{0}) \sin \Theta  \nonumber \\
+  y_{1} & = & -(x - x_{0}) \sin \Theta \nonumber \\
+        && + (y - y_{0}) \cos \Theta.
+\end{eqnarray}
+
+%If you don't want an equation number, use the star form:
+%\begin{eqnarray*}...\end{eqnarray*}
+
+% Break each line at a sign of operation
+% (+, -, etc.) if possible, with the sign of operation
+% on the new line.
+
+% Indent second and subsequent lines to align with
+% the first character following the equal sign on the
+% first line.
+
+% Use an \hspace{} command to insert horizontal space
+% into your equation if necessary. Place an appropriate
+% unit of measure between the curly braces, e.g.
+% \hspace{1in}; you may have to experiment to achieve
+% the correct amount of space.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  EQUATION NUMBERING: COUNTER
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% You may change equation numbering by resetting
+% the equation counter or by explicitly numbering
+% an equation.
+
+% To explicitly number an equation, type \eqnum{}
+% (with the desired number between the brackets)
+% after the \begin{equation} or \begin{eqnarray}
+% command.  The \eqnum{} command will affect only
+% the equation it appears with; LaTeX will number
+% any equations appearing later in the manuscript
+% according to the equation counter.
+%
+
+% If you have a multiline equation that needs only
+% one equation number, use a \nonumber command in
+% front of the double backslashes (\\) as shown in
+% the multiline equation above.
+
+% If you are using line numbers, remember to surround
+% equations with \begin{linenomath*}...\end{linenomath*}
+
+%  To add line numbers to lines in equations:
+%  \begin{linenomath*}
+%  \begin{equation}
+%  \end{equation}
+%  \end{linenomath*}
+
+
+

@@ -1,0 +1,88 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: changes_marked.aux
+The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: agusample.bib
+Repeated entry---line 479 of file agusample.bib
+ : @article{simpson1951interpretation
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 542 of file agusample.bib
+ : @article{stokes1851effect
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 549 of file agusample.bib
+ : @article{ferguson2004simple
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 600 of file agusample.bib
+ : @article{tang2015reconstructing
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 694 of file agusample.bib
+ : @inproceedings{droppo1997freshwater
+ :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 805 of file agusample.bib
+ : @article{zeichner2021early
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 907 of file agusample.bib
+ : @article{jarvis2005measuring
+ :                             ,
+I'm skipping whatever remains of this entry
+apacite.bst [2013/07/21 v6.03 APA bibliography style]
+Warning--No journal in amoudry2008review
+Warning--`others' not consistent with 6th ed. of the APA Manual
+Warning--No journal in stokes1851effect
+You've used 55 entries,
+            6951 wiz_defined-function locations,
+            1618 strings with 20901 characters,
+and the built_in function-call counts, 111227 in all, are:
+= -- 13578
+> -- 944
+< -- 5551
++ -- 5888
+- -- 128
+* -- 7303
+:= -- 20716
+add.period$ -- 219
+call.type$ -- 55
+change.case$ -- 938
+chr.to.int$ -- 0
+cite$ -- 112
+duplicate$ -- 3130
+empty$ -- 4190
+format.name$ -- 1679
+if$ -- 20723
+int.to.chr$ -- 0
+int.to.str$ -- 165
+missing$ -- 0
+newline$ -- 1403
+num.names$ -- 440
+pop$ -- 1661
+preamble$ -- 1
+purify$ -- 222
+quote$ -- 0
+skip$ -- 6975
+stack$ -- 0
+substring$ -- 6395
+swap$ -- 1800
+text.length$ -- 131
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 4528
+warning$ -- 3
+while$ -- 568
+width$ -- 0
+write$ -- 1780
+(There were 7 error messages)
